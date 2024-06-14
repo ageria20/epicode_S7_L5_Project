@@ -12,6 +12,16 @@ const inputBrand = document.getElementById("floatingBrand");
 const inputImage = document.getElementById("floatingImage");
 const inputPrice = document.getElementById("floatingPrice");
 
+const spinner = document.querySelector("#spinner");
+
+const loading = boolean => {
+  if (boolean) {
+    spinner.classList.remove("d-none");
+  } else {
+    spinner.classList.add("d-none");
+  }
+};
+
 const Url = productId
   ? "https://striveschool-api.herokuapp.com/api/product/" + productId
   : "https://striveschool-api.herokuapp.com/api/product/";
@@ -43,6 +53,7 @@ window.addEventListener("DOMContentLoaded", function () {
         else console.log("Errore");
       })
       .then(createdProduct => {
+        loading(false);
         if (productId) {
           alert(`Product: ${createdProduct.name}
 id: ${createdProduct._id} MODIFIED!`);
@@ -101,6 +112,7 @@ id: ${createdProduct._id} CREATED!`);
     })
       .then(resp => resp.json())
       .then(currProduct => {
+        loading(false);
         const { name, description, brand, imageUrl, price } = currProduct;
         console.log(currProduct);
         inputName.value = name;

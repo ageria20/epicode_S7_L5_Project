@@ -6,6 +6,16 @@ console.log(params);
 const id = params.get("id");
 console.log(id);
 
+const spinner = document.querySelector("#spinner");
+
+const loading = boolean => {
+  if (boolean) {
+    spinner.classList.remove("d-none");
+  } else {
+    spinner.classList.add("d-none");
+  }
+};
+
 const getProduct = () => {
   fetch("https://striveschool-api.herokuapp.com/api/product/" + id, {
     headers: {
@@ -20,6 +30,7 @@ const getProduct = () => {
       } else console.log("Errore");
     })
     .then(currProduct => {
+      loading(false);
       const row = document.getElementById("row");
 
       const { name, description, brand, imageUrl, price } = currProduct;
