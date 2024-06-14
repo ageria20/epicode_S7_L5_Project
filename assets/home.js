@@ -78,6 +78,14 @@ window.addEventListener("DOMContentLoaded", function () {
         btnView.addEventListener("click", function () {
           window.location.assign("./details.html?id=" + product._id);
         });
+        const btnEdit = document.createElement("button");
+        btnEdit.type = "button";
+        btnEdit.className = "btn btn-sm btn-outline-secondary";
+        btnEdit.innerText = `EDIT`;
+        btnGroup.appendChild(btnEdit);
+        btnEdit.addEventListener("click", function () {
+          window.location.assign("./backOffice.html?id=" + product._id);
+        });
 
         console.log(product._id);
       });

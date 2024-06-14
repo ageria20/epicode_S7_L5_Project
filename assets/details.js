@@ -93,6 +93,6 @@ const getProduct = () => {
 window.addEventListener("DOMContentLoaded", function () {
   getProduct();
   btnSave.addEventListener("click", function () {
-    window.location.assign("./backOffice.html?id=" + id);
+    window.location.assign("./backOffice.html?=" + id);
   });
 });

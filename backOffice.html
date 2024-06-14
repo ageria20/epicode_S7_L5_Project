@@ -44,7 +44,7 @@
       <div class="row justify-content-center">
         <div class="col-md-4">
           <h1 class="display-4 mt-5 mb-4 text-primary d-inline-block">Backoffice</h1>
-
+          <h4 id="tipo" class="d-inline-block"></h4>
           <form id="createPrduct">
             <div class="floating mb-3">
               <input type="text" class="form-control" id="floatingName" placeholder="Iphone 14" />
@@ -66,7 +66,9 @@
               <input type="text" class="form-control" id="floatingPrice" placeholder="599" />
               <label for="floatingPassword">Price</label>
             </div>
-            <button type="submit" id="save" class="btn btn-info">Save</button>
+            <button type="submit" id="save" class="btn btn-success">Save</button>
+            <button type="reset" id="reset" class="btn btn-secondary">Reset</button>
+            <button type="button" id="delete" class="btn d-none">Delete</button>
           </form>
         </div>
       </div>
