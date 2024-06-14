@@ -75,7 +75,7 @@ window.addEventListener("DOMContentLoaded", function () {
         // btn group
 
         const btnGroupCont = document.createElement("div");
-        btnGroupCont.className = "d-flex justify-content-between align-items-center";
+        btnGroupCont.className = "btn-group";
         cardBody.appendChild(btnGroupCont);
 
         const btnGroup = document.createElement("div");
@@ -83,7 +83,7 @@ window.addEventListener("DOMContentLoaded", function () {
         btnGroupCont.appendChild(btnGroup);
         const btnView = document.createElement("button");
         btnView.type = "button";
-        btnView.className = "btn btn-sm btn-outline-secondary";
+        btnView.className = "btn btn-sm btn-secondary";
         btnView.innerText = `VIEW`;
         btnGroup.appendChild(btnView);
         btnView.addEventListener("click", function () {
@@ -91,7 +91,7 @@ window.addEventListener("DOMContentLoaded", function () {
         });
         const btnEdit = document.createElement("button");
         btnEdit.type = "button";
-        btnEdit.className = "btn btn-sm btn-outline-secondary";
+        btnEdit.className = "btn btn-sm btn-primary";
         btnEdit.innerText = `EDIT`;
         btnGroup.appendChild(btnEdit);
         btnEdit.addEventListener("click", function () {
