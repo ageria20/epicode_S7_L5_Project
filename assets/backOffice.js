@@ -44,10 +44,17 @@ window.addEventListener("DOMContentLoaded", function () {
       })
       .then(createdProduct => {
         if (productId) {
-          alert(`Product ${createdProduct.name} con id: ${createdProduct._id} MODIFIED!`);
+          alert(`Product: ${createdProduct.name}
+id: ${createdProduct._id} MODIFIED!`);
+
+          window.location.assign("./home.html");
         } else {
-          alert(`Product ${createdProduct.name} con id: ${createdProduct._id} CREATED!`);
-          form.reset();
+          alert(`Product: ${createdProduct.name}
+id: ${createdProduct._id} CREATED!`);
+          form.addEventListener("reset", function () {
+            window.location.assign("./home.html");
+          });
+          window.location.assign("./home.html");
         }
       })
       .catch(err => console.log(err));

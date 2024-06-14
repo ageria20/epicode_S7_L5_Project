@@ -1,6 +1,16 @@
 const productList = document.getElementById("containerList");
 const row = document.getElementById("row");
 
+const spinner = document.querySelector("#spinner");
+
+const loading = boolean => {
+  if (boolean) {
+    spinner.classList.remove("d-none");
+  } else {
+    spinner.classList.add("d-none");
+  }
+};
+
 window.addEventListener("DOMContentLoaded", function () {
   fetch("https://striveschool-api.herokuapp.com/api/product/", {
     headers: {
@@ -17,6 +27,7 @@ window.addEventListener("DOMContentLoaded", function () {
       }
     })
     .then(products => {
+      loading(false);
       products.forEach(product => {
         // // creo la colonna
         const col = document.createElement("div");

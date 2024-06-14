@@ -73,11 +73,6 @@ const getProduct = () => {
       const btnGroup = document.createElement("div");
       btnGroup.className = "btn-group";
       btnGroupCont.appendChild(btnGroup);
-      const btnSave = document.createElement("button");
-      btnSave.type = "button";
-      btnSave.className = "btn btn-sm btn-outline-secondary";
-      btnSave.innerText = `SAVE`;
-      btnGroup.appendChild(btnSave);
 
       btnEdit.type = "button";
       btnEdit.className = "btn btn-sm btn-outline-secondary";
@@ -92,7 +87,4 @@ const getProduct = () => {
 
 window.addEventListener("DOMContentLoaded", function () {
   getProduct();
-  btnSave.addEventListener("click", function () {
-    window.location.assign("./backOffice.html?=" + id);
-  });
 });
