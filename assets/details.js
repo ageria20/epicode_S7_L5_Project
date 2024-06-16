@@ -35,16 +35,16 @@ const getProduct = () => {
 
       const { name, description, brand, imageUrl, price } = currProduct;
       console.log(currProduct);
-      const col = document.createElement("div");
-      col.className = "mt-4";
-      row.appendChild(col);
-      const card = document.createElement("div");
+      const colImg = document.createElement("div");
+      colImg.className = "col-12 col-md-6 col-lg-4 mt-4";
+      row.appendChild(colImg);
+
+      const colDescription = document.createElement("div");
       // // attribuisco le classi alla card
-      card.classList.add("card");
-      card.classList.add("mb-4");
-      card.classList.add("shadow-sm");
+      colDescription.className = "col-12 col-md-6 col-lg-4";
+      colDescription.classList.add("shadow-sm");
       // // appendo la card alla colonna
-      col.appendChild(card);
+      row.appendChild(colDescription);
 
       // creo le immagini
       const img = document.createElement("img");
@@ -54,10 +54,10 @@ const getProduct = () => {
       img.setAttribute("alt", description);
 
       // Appendo l'immagine alla card
-      card.appendChild(img);
+      colImg.appendChild(img);
       const cardBody = document.createElement("div");
       cardBody.className = "card-body";
-      card.appendChild(cardBody);
+      colDescription.appendChild(cardBody);
       // creo il titolo del body
       const cardTitle = document.createElement("h5");
       cardTitle.className = "card-title";

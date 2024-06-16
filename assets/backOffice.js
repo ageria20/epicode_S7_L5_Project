@@ -1,5 +1,5 @@
 const saveBtn = document.getElementById("save");
-const form = document.querySelector("#createPrduct");
+const createProduct = document.querySelector("#createPrduct");
 const resetBtn = document.getElementById("reset");
 const tipo = document.getElementById("tipo");
 const deleteBtn = document.querySelector("#delete");
@@ -12,23 +12,13 @@ const inputBrand = document.getElementById("floatingBrand");
 const inputImage = document.getElementById("floatingImage");
 const inputPrice = document.getElementById("floatingPrice");
 
-const spinner = document.querySelector("#spinner");
-
-const loading = boolean => {
-  if (boolean) {
-    spinner.classList.remove("d-none");
-  } else {
-    spinner.classList.add("d-none");
-  }
-};
-
 const Url = productId
   ? "https://striveschool-api.herokuapp.com/api/product/" + productId
   : "https://striveschool-api.herokuapp.com/api/product/";
 const methods = productId ? "PUT" : "POST";
 
 window.addEventListener("DOMContentLoaded", function () {
-  form.addEventListener("submit", function (e) {
+  createProduct.addEventListener("submit", function (e) {
     e.preventDefault();
 
     const newProducts = {
@@ -112,7 +102,6 @@ id: ${createdProduct._id} CREATED!`);
     })
       .then(resp => resp.json())
       .then(currProduct => {
-        loading(false);
         const { name, description, brand, imageUrl, price } = currProduct;
         console.log(currProduct);
         inputName.value = name;
