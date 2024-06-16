@@ -40,7 +40,7 @@ window.addEventListener("DOMContentLoaded", function () {
         // // attribuisco le classi alla card
         card.classList.add("card");
         card.classList.add("mb-4");
-        card.classList.add("shadow-sm");
+        card.classList.add("shadow");
         // // appendo la card alla colonna
         col.appendChild(card);
 
